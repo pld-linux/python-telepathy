@@ -1,4 +1,6 @@
+# TODO: rename to python-telepathy
 Summary:	Python module to connect to Telepathy
+Summary(pl.UTF-8):	Moduł Pythona do łączenia się z Telepathy
 Name:		telepathy-python
 Version:	0.13.10
 Release:	1
@@ -8,10 +10,14 @@ Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/%{name}-%{ve
 # Source0-md5:	a8c7d7cd3c0f18eff5848a1f060b979e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	python
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Python module to connect to Telepathy.
+
+%description -l pl.UTF-8
+Moduł Pythona do łączenia się z Telepathy.
 
 %prep
 %setup -q
@@ -26,8 +32,7 @@ python setup.py install \
         --root=$RPM_BUILD_ROOT \
         --optimize=2
 
-find $RPM_BUILD_ROOT%{py_sitescriptdir}/ -name \*.py | xargs rm -f
-
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -name \*.py | xargs rm -f
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -37,9 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README
 %dir %{py_sitescriptdir}/telepathy
 %{py_sitescriptdir}/telepathy/*.py[co]
-%dir %{py_sitescriptdir}/telepathy/_generated/
+%dir %{py_sitescriptdir}/telepathy/_generated
 %{py_sitescriptdir}/telepathy/_generated/*.py[co]
-%dir %{py_sitescriptdir}/telepathy/client/
+%dir %{py_sitescriptdir}/telepathy/client
 %{py_sitescriptdir}/telepathy/client/*.py[co]
-%dir %{py_sitescriptdir}/telepathy/server/
+%dir %{py_sitescriptdir}/telepathy/server
 %{py_sitescriptdir}/telepathy/server/*.py[co]
