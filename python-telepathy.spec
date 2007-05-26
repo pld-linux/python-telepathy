@@ -1,12 +1,11 @@
-# TODO: rename to python-telepathy
 Summary:	Python module to connect to Telepathy
 Summary(pl.UTF-8):	Moduł Pythona do łączenia się z Telepathy
-Name:		telepathy-python
+Name:		python-telepathy
 Version:	0.13.10
 Release:	1
 License:	LGPL
-Group:		Libraries
-Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/%{name}-%{version}.tar.gz
+Group:		Libraries/Python
+Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-%{version}.tar.gz
 # Source0-md5:	a8c7d7cd3c0f18eff5848a1f060b979e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	python
@@ -20,7 +19,7 @@ Python module to connect to Telepathy.
 Moduł Pythona do łączenia się z Telepathy.
 
 %prep
-%setup -q
+%setup -q -n telepathy-python-%{version}
 
 %build
 python setup.py build
