@@ -10,6 +10,7 @@ Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-py
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libxslt-progs
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
