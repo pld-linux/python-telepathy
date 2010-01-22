@@ -1,13 +1,15 @@
 Summary:	Python module to connect to Telepathy
 Summary(pl.UTF-8):	Moduł Pythona do łączenia się z Telepathy
 Name:		python-telepathy
-Version:	0.15.7
+Version:	0.15.15
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-%{version}.tar.gz
-# Source0-md5:	e65f660f10076df4149b64308b650de1
+# Source0-md5:	714fac03ff1386092f209f7ec398d261
 URL:		http://telepathy.freedesktop.org/wiki/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -36,15 +38,18 @@ Przykłady do modułu telepathy.
 %setup -q -n telepathy-python-%{version}
 
 %build
-python setup.py build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-python setup.py install \
-        --root=$RPM_BUILD_ROOT \
-        --optimize=2
+%{__make} install \
+        DESTDIR=$RPM_BUILD_ROOT
 
 cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -64,7 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/telepathy/client/*.py[co]
 %dir %{py_sitescriptdir}/telepathy/server
 %{py_sitescriptdir}/telepathy/server/*.py[co]
-%{py_sitescriptdir}/telepathy_python-*.egg-info
 
 %files examples
 %defattr(644,root,root,755)
