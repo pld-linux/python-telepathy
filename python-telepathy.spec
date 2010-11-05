@@ -1,12 +1,12 @@
 Summary:	Python module to connect to Telepathy
 Summary(pl.UTF-8):	Moduł Pythona do łączenia się z Telepathy
 Name:		python-telepathy
-Version:	0.15.17
-Release:	2
+Version:	0.15.18
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-%{version}.tar.gz
-# Source0-md5:	7f38d41abc9ce2a8f2eda820c002d0c4
+# Source0-md5:	51da78a77681b0652d9b4ca941da0658
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf
 BuildRequires:	automake
