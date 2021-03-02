@@ -5,9 +5,9 @@ Version:	0.15.19
 Release:	2
 License:	LGPL v2.1+
 Group:		Libraries/Python
-Source0:	http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-%{version}.tar.gz
+Source0:	https://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-%{version}.tar.gz
 # Source0-md5:	f7ca25ab3c88874015b7e9728f7f3017
-URL:		http://telepathy.freedesktop.org/wiki/
+URL:		https://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libxslt-progs
